@@ -1,0 +1,8 @@
+#!/bin/bash
+
+docker run -it --rm \
+    -v "$PWD":/app \
+    -v "$HOME":/tmp \
+    --user $(id -u):$(id -g) \
+    composer:latest \
+    composer "$@"
