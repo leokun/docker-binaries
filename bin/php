@@ -1,3 +1,8 @@
 #!/bin/bash
 
-docker run  --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:7-cli php "$@"
+docker run -it --rm \
+    -v "$PWD":/usr/src/myapp \
+    -w /usr/src/myapp \
+    --user $(id -u):$(id -g) \
+    php:7-cli \
+    php "$@"

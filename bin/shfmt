@@ -1,5 +1,10 @@
 #!/bin/bash
 
-docker run -it --rm -v "$(pwd)":/sh -w /sh jamesmstone/shfmt "$@"
+docker run -it --rm \
+    -v "$(pwd)":/sh \
+    -w /sh \
+    --user $(id -u):$(id -g) \
+    jamesmstone/shfmt \
+    "$@"
 
 
