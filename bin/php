@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker run -it --rm \
+docker run -i --rm \
     -v "$PWD":/usr/src/myapp \
     -w /usr/src/myapp \
     --user $(id -u):$(id -g) \
